@@ -108,25 +108,27 @@
 
 
 
-  <meta name="description" content="最近项目需要开发一个微信小程序应用，考虑前端技术栈统一(Vue)，选用网易开源的Megalo(网上戏称说网易出品必属精品)。 可能开源不久，网上资料较少，在此记录点开发中碰到的小问题。  由于微信的标签与HTML有差异，vue事件的需要重新对应 传统HTML INPUT radio事件1&amp;lt;input type=&quot;radio&quot; v-model=&quot;pick&quot; v-bind:value=&quot;a&quot;&amp;g">
+  <meta name="description" content="首先简单说一下普通二维码绑定功能作用：  兼容线下已有的二维码 能同时支持微信、支付宝小程序 小程序启动传参  微信小程序普通二维码资料 支付宝小程序普通二维码资料  我的项目原始需求是扫描二维码调起小程序并获取当前被扫描设备ID。背景介绍完毕回到Megalo，由于Megalo对原生生命周期进行了封装，这里碰到得问题是二维码值从何处获取？直接上解决代码：1234567891011121314151">
 <meta name="keywords" content="vue,megalo,小程序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序Megalo开发踩坑计-radio标签">
-<meta property="og:url" content="http://blog.yumengtao.top/2019/04/13/微信小程序Megalo开发踩坑计-radio标签/index.html">
+<meta property="og:title" content="微信小程序Megalo开发踩坑计-普通二维码绑定">
+<meta property="og:url" content="http://blog.yumengtao.top/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/index.html">
 <meta property="og:site_name" content="俞梦涛的自留田">
-<meta property="og:description" content="最近项目需要开发一个微信小程序应用，考虑前端技术栈统一(Vue)，选用网易开源的Megalo(网上戏称说网易出品必属精品)。 可能开源不久，网上资料较少，在此记录点开发中碰到的小问题。  由于微信的标签与HTML有差异，vue事件的需要重新对应 传统HTML INPUT radio事件1&amp;lt;input type=&quot;radio&quot; v-model=&quot;pick&quot; v-bind:value=&quot;a&quot;&amp;g">
+<meta property="og:description" content="首先简单说一下普通二维码绑定功能作用：  兼容线下已有的二维码 能同时支持微信、支付宝小程序 小程序启动传参  微信小程序普通二维码资料 支付宝小程序普通二维码资料  我的项目原始需求是扫描二维码调起小程序并获取当前被扫描设备ID。背景介绍完毕回到Megalo，由于Megalo对原生生命周期进行了封装，这里碰到得问题是二维码值从何处获取？直接上解决代码：1234567891011121314151">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-13T09:53:09.221Z">
+<meta property="og:image" content="http://blog.yumengtao.top/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/mp.png">
+<meta property="og:updated_time" content="2019-04-21T07:36:37.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序Megalo开发踩坑计-radio标签">
-<meta name="twitter:description" content="最近项目需要开发一个微信小程序应用，考虑前端技术栈统一(Vue)，选用网易开源的Megalo(网上戏称说网易出品必属精品)。 可能开源不久，网上资料较少，在此记录点开发中碰到的小问题。  由于微信的标签与HTML有差异，vue事件的需要重新对应 传统HTML INPUT radio事件1&amp;lt;input type=&quot;radio&quot; v-model=&quot;pick&quot; v-bind:value=&quot;a&quot;&amp;g">
+<meta name="twitter:title" content="微信小程序Megalo开发踩坑计-普通二维码绑定">
+<meta name="twitter:description" content="首先简单说一下普通二维码绑定功能作用：  兼容线下已有的二维码 能同时支持微信、支付宝小程序 小程序启动传参  微信小程序普通二维码资料 支付宝小程序普通二维码资料  我的项目原始需求是扫描二维码调起小程序并获取当前被扫描设备ID。背景介绍完毕回到Megalo，由于Megalo对原生生命周期进行了封装，这里碰到得问题是二维码值从何处获取？直接上解决代码：1234567891011121314151">
+<meta name="twitter:image" content="http://blog.yumengtao.top/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/mp.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://blog.yumengtao.top/2019/04/13/微信小程序Megalo开发踩坑计-radio标签/">
+  <link rel="canonical" href="http://blog.yumengtao.top/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/">
 
 
 
@@ -136,7 +138,7 @@
   };
 </script>
 
-  <title>微信小程序Megalo开发踩坑计-radio标签 | 俞梦涛的自留田</title>
+  <title>微信小程序Megalo开发踩坑计-普通二维码绑定 | 俞梦涛的自留田</title>
   
 
 
@@ -297,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.yumengtao.top/2019/04/13/微信小程序Megalo开发踩坑计-radio标签/">
+    <link itemprop="mainEntityOfPage" href="http://blog.yumengtao.top/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="俞梦涛">
@@ -314,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">微信小程序Megalo开发踩坑计-radio标签
+          <h1 class="post-title" itemprop="name headline">微信小程序Megalo开发踩坑计-普通二维码绑定
               
             
           </h1>
@@ -339,7 +341,7 @@
                 
               
 
-              <time title="创建时间：2019-04-13 17:47:20 / 修改时间：17:53:09" itemprop="dateCreated datePublished" datetime="2019-04-13T17:47:20+08:00">2019-04-13</time>
+              <time title="创建时间：2019-04-21 15:22:50 / 修改时间：15:36:37" itemprop="dateCreated datePublished" datetime="2019-04-21T15:22:50+08:00">2019-04-21</time>
             
 
             
@@ -376,8 +378,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/13/微信小程序Megalo开发踩坑计-radio标签/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/04/13/微信小程序Megalo开发踩坑计-radio标签/" itemprop="commentCount"></span>
+                <a href="/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,13 +407,17 @@
       
 
       
-        <p>最近项目需要开发一个微信小程序应用，考虑前端技术栈统一(Vue)，选用网易开源的Megalo(网上戏称说网易出品必属精品)。</p>
-<p>可能开源不久，网上资料较少，在此记录点开发中碰到的小问题。</p>
+        <p>首先简单说一下普通二维码绑定功能作用：</p>
+<ol>
+<li>兼容线下已有的二维码</li>
+<li>能同时支持微信、支付宝小程序</li>
+<li>小程序启动传参</li>
+</ol>
+<p><a href="https://developers.weixin.qq.com/miniprogram/introduction/qrcode.html" target="_blank" rel="noopener">微信小程序普通二维码资料</a></p>
+<p><a href="https://docs.alipay.com/mini/introduce/vzd5v0" target="_blank" rel="noopener">支付宝小程序普通二维码资料</a></p>
 <hr>
-<p>由于微信的标签与HTML有差异，vue事件的需要重新对应</p>
-<p>传统HTML INPUT radio事件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">v-model</span>=<span class="string">"pick"</span> <span class="attr">v-bind:value</span>=<span class="string">"a"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>但是小程序重新定义INPUT标签，单选radio采用独立标签<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">radio-group</span> <span class="attr">class</span>=<span class="string">"radio-group"</span> <span class="attr">bindchange</span>=<span class="string">"radioChange"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">class</span>=<span class="string">"radio"</span> <span class="attr">wx:for</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">radio</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">checked</span>=<span class="string">""</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>这样导致v-model无法绑定，泪目。。。<br>那么这个问题如何解决呢，重点就在bindchange=”radioChange”（radio选择变更事件）。<br>现在问题变成bindchange对应vue中什么事件呢？答案:@change<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">radio-group</span> @<span class="attr">change</span>=<span class="string">"breathChange"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">label</span> &gt;</span><span class="tag">&lt;<span class="name">radio</span> <span class="attr">value</span>=<span class="string">"positive"</span>/&gt;</span>阳性<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">label</span> &gt;</span><span class="tag">&lt;<span class="name">radio</span> <span class="attr">value</span>=<span class="string">"negative "</span>/&gt;</span>阴性<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">radio-group</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>我的项目原始需求是扫描二维码调起小程序并获取当前被扫描设备ID。<br>背景介绍完毕回到Megalo，由于Megalo对原生生命周期进行了封装，这里碰到得问题是二维码值从何处获取？<br>直接上解决代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onLoad</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.$mp.query.q)&#123;<span class="comment">//判断是否获取到二维码值，用户可能通过扫二维码进来，或者是微笑下拉小程序直接进入。</span></span><br><span class="line">      <span class="keyword">let</span> deviceId = getURLParameters(<span class="built_in">decodeURIComponent</span>(<span class="keyword">this</span>.$mp.query.q)).d <span class="comment">//我的二维码值是https://xxxx/xxxx?d=ABCD123,使用正则获取url参数</span></span><br><span class="line">      <span class="keyword">if</span>(deviceId)&#123;</span><br><span class="line">        appInstance.globalData.devID = deviceId; <span class="comment">//保存至全局变量</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//url解析代码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getURLParameters</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> url</span><br><span class="line">    .match(<span class="regexp">/([^?=&amp;]+)(=([^&amp;]*))/g</span>)</span><br><span class="line">    .reduce(</span><br><span class="line">      (a, v) =&gt; (</span><br><span class="line">        (a[v.slice(<span class="number">0</span>, v.indexOf(<span class="string">"="</span>))] = v.slice(v.indexOf(<span class="string">"="</span>) + <span class="number">1</span>)), a</span><br><span class="line">      ),</span><br><span class="line">      &#123;&#125;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>答案就是<a href="https://megalojs.org/#/api/index?id=mp" target="_blank" rel="noopener">$mp</a>,页面初始化时保存小程序的相关信息都绑定在this.$mp。<br>具体$mp内容很多，下面一个截图大家可以简单看一下，实际根据项目任君取用。<br><img src="/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/mp.png" title="mp"></p>
 
       
     </div>
@@ -433,7 +439,7 @@
     <strong>本文作者： </strong>俞梦涛</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://blog.yumengtao.top/2019/04/13/微信小程序Megalo开发踩坑计-radio标签/" title="微信小程序Megalo开发踩坑计-radio标签">http://blog.yumengtao.top/2019/04/13/微信小程序Megalo开发踩坑计-radio标签/</a>
+    <a href="http://blog.yumengtao.top/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/" title="微信小程序Megalo开发踩坑计-普通二维码绑定">http://blog.yumengtao.top/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -463,8 +469,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/16/MySQL安装及数据目录修改/" rel="next" title="MySQL安装及数据目录修改">
-                <i class="fa fa-chevron-left"></i> MySQL安装及数据目录修改
+              <a href="/2019/04/13/微信小程序Megalo开发踩坑计-radio标签/" rel="next" title="微信小程序Megalo开发踩坑计-radio标签">
+                <i class="fa fa-chevron-left"></i> 微信小程序Megalo开发踩坑计-radio标签
               </a>
             
           </div>
@@ -472,10 +478,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/21/微信小程序Megalo开发踩坑计-普通二维码绑定/" rel="prev" title="微信小程序Megalo开发踩坑计-普通二维码绑定">
-                微信小程序Megalo开发踩坑计-普通二维码绑定 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
